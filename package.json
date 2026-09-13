@@ -2,6 +2,14 @@
   "name": "flightsandsearch",
   "version": "1.0.0",
   "description": "Micro service for handling flights CRUD",
+  "homepage": "https://github.com/aryu221103-dot/FlightAndSearchService#readme",
+  "bugs": {
+    "url": "https://github.com/aryu221103-dot/FlightAndSearchService/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aryu221103-dot/FlightAndSearchService.git"
+  },
   "license": "ISC",
   "author": "",
   "type": "commonjs",
@@ -17,5 +25,6 @@
     "nodemon": "^3.1.14",
     "sequelize": "^6.37.8",
     "sequelize-cli": "^6.6.5"
-  }
+  },
+  "devDependencies": {}
 }
