@@ -19,7 +19,7 @@ class CityRepo {
             throw {error}
     }
 }
-    async updateCity(cityId, data) {
+    async updateCity(cityId, data) { //{name: "prayagraj"}
         try {
             const city = await City.update(data, {
                 where: { id: cityId }
