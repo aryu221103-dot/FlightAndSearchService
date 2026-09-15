@@ -2,9 +2,11 @@ const { City } = require('../models/index');
  
 class CityRepo {
     async createCity({name}) {
-      try  {const city = await City.create({name});
+      try  {
+        const city = await City.create({name});
         return city;
     } catch (error) {
+        console.log("Something went wrong in the repository layer!");
         throw {error};
     }
     }
@@ -15,7 +17,7 @@ class CityRepo {
         });
         return true;
     } catch (error) {
-        console.log("Something went wrong!");
+        console.log("Something went wrong in the repository layer!");
             throw {error}
     }
 }
@@ -31,8 +33,9 @@ class CityRepo {
             city.name = data.name;
             await city.save();
             return city;
-            // will return updated object
+            // will return updated object 
         } catch (error) {
+        console.log("Something went wrong in the repository layer!");
             throw { error };
         }
     }
@@ -42,8 +45,19 @@ class CityRepo {
         const city = await City.findByPk(cityId);
         return city;
       } catch (error) {
+        console.log("Something went wrong in the repository layer!");
         throw { error };
       }
+    }
+
+    async getAllCities() {
+        try {
+            const cities = await City.findAll();
+            return cities;
+        } catch (error) {
+        console.log("Something went wrong in the repository layer!");
+        throw { error };
+        }
     }
 }
 

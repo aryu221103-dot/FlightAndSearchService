@@ -6,6 +6,7 @@ const router = express.Router();
 router.post('/city', cityController.create);
 router.delete('/city/:id', cityController.delet);
 router.get('/city/:id', cityController.get);
+router.get('/city', cityController.getAll);
 router.patch('/city/:id', cityController.update);
 
 
