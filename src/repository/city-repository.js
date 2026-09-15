@@ -21,10 +21,17 @@ class CityRepo {
 }
     async updateCity(cityId, data) { //{name: "prayagraj"}
         try {
-            const city = await City.update(data, {
-                where: { id: cityId }
-            });
+            // will not return updated object
+            // const city = await City.update(data, {
+            //     where: { id: cityId },
+            //     returning: true,
+            //     plain: true
+            // });
+            const city = await City.findByPk(cityId);
+            city.name = data.name;
+            await city.save();
             return city;
+            // will return updated object
         } catch (error) {
             throw { error };
         }
